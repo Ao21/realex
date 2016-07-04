@@ -1,0 +1,42 @@
+.rxp-container {
+	border: none;	
+}
+
+.rxp-header { 
+	border: 1px solid #CCC;
+	margin-bottom:7px;	
+	
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	/*
+	-webkit-box-shadow: 0px 2px 2px 2px #DEDEDE;
+	box-shadow: 0px 2px 2px 2px #DEDEDE;
+	*/
+}
+
+.rxp-body {
+	border: 1px solid #CCC;
+	margin-bottom:7px;	
+	
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	/*
+	-webkit-box-shadow: 0px 2px 2px 2px #DEDEDE;
+	box-shadow: 0px 2px 2px 2px #DEDEDE;
+	*/
+}
+
+.rxp-footer {
+	border: 1px solid #CCC;
+	
+	
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+	border-radius: 7px;
+	/*
+	-webkit-box-shadow: 0px 2px 2px 2px #DEDEDE;
+	box-shadow: 0px 2px 2px 2px #DEDEDE;
+	*/
+}

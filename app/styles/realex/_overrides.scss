@@ -1,0 +1,214 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+
+
+
+body, html {
+	font-family: 'Open Sans';
+	margin: 0;
+	padding:0;
+}
+.rxp-placeholder{
+	max-width: 100%;
+}
+.rxp-container{
+	@include outer-container(100%);
+	background-color: #1b1918;
+    float: left;
+	border-radius: 0;
+    width: 100%;
+}
+
+#rxp-body {
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	border-radius: 0!important;
+}
+// Payment Details
+.rxp-page-title{
+	display: none;
+}
+
+.rxp-form {}
+
+.rxp-card-loader {
+	display: none!important;
+}
+.rxp-control-group {
+
+	width: 100%;
+    position: relative;
+	margin-bottom: 1rem;
+	clear: both;
+}
+#rxp-body .rxp-control-label{
+	font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 2;
+    text-align: left;
+    text-transform: uppercase;
+    font-weight: 400!important;
+    color: #f7f7f7!important;
+	margin-bottom:0!important;
+}
+
+.controls {
+	@include span-columns(12);
+}
+
+
+input {
+	color: #f7f7f7;
+	font-size: 16px;
+    font-size: 1rem;
+	font-family: 'Open Sans';
+    line-height: 1.5;
+    width: 100%;
+    min-height: 2.5rem!important;
+	background: transparent;
+    outline: none;
+    border-style: solid;
+    border-color: #9a9c9a;
+    border-width: 0px 0px 2px 0px;
+    border-radius: 2px;
+    transition: border cubic-bezier(0.5, 0, 0.5, 1) 0.25s;
+
+	&:focus {
+		border-color: #f7f7f7;
+	}
+	&.rxp-error {
+		color: #f7f7f7;
+		border-color: #e84136;
+	}
+	&.valid {
+		border-color: #44b491;
+	}
+	&.rxpcol2 {
+		margin-bottom: 0!important;
+	}
+	& + label.rxp-error {
+		margin-top: 3px;
+		float: left;
+	}
+}
+
+.rxp-wide {
+	width: 100%;
+}
+.rxpcol2 {
+	width: 100%!important;
+    float: left!important;
+	margin: 0!important;
+    margin-bottom: 1rem;
+}
+
+// Expiry 
+
+#expiry-controls {
+	@include span-columns(12);
+	font-size: 0;
+	input[type="tel"] {
+		font-size: 1rem;
+    	line-height: 1.5;
+		@include span-columns(6);
+		display: inline-block;
+		float: initial;
+		@include media($mobile) {
+			@include span-columns(6);
+		}
+	}
+}
+
+label.rxp-error {
+	font-weight: 600;
+		font-size: 0.75rem;
+		color: #e84136;
+}
+
+#expiry-error-container{
+	@include span-columns(12);
+	padding-top: 3px;
+	label {
+		@include span-columns(6);
+		float: initial;
+		display: inline;
+
+		font-weight: 600;
+		font-size: 0.75rem;
+		color: #e84136;
+		&:last-child {
+			float: right;
+		}
+		@include media($mobile) {
+			@include span-columns(12);
+			&:last-child {
+			float: left;
+		}
+		}
+	}
+	
+}
+.rxp-allowed-cards {
+	margin-top: 0.5rem;
+	float: left;
+	margin-bottom: 0!important;
+}
+
+.popover {
+	display: none!important;
+}
+
+.rxp-allowed-cards {
+	img {
+		opacity: 0.4;
+	}
+	.rxp-highlight {
+		opacity: 1;
+	}
+	.rxp-fade {
+		opacity: 0;
+	}
+}
+
+.rxp-btn {
+	min-height: 3.5rem!important;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0.5rem 1.5rem!important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    font-weight: 600;
+	border-radius: 0!important;
+    box-shadow: none;
+    border: none;
+	    background-color: #f8d349;
+    color: #1b1918;
+}
+
+
+#card-payment-form > div.form-actions > div {
+	margin: 1.5rem 0;
+	color: #f7f7f7;
+}
+
+.rxp-footer {
+	border-radius: 0;
+	display: none;
+}
+
+.rxp-error-message-pane {
+	background-color: transparent;
+    color: #e84136;
+    border: 2px solid #e84136;
+    font-size: 0.75rem;
+    padding: 0.2rem 1rem;
+    margin-bottom: 1rem;
+}
+
+#card-errors.rxp-error {
+	width: 100%;
+	float: left;
+}

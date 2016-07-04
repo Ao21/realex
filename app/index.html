@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="">
+<head>
+    <html class="gr__hpp_sandbox_realexpayments_com">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!--<base href="https://hpp.sandbox.realexpayments.com:443/merchants/aatest/internet/">-->
+        <base href=".">
+        <meta charset="UTF-8" content="IE=edge" http-equiv="X-UA-Compatible">
+        <meta charset="UTF-8" content="IE=9" http-equiv="X-UA-Compatible">
+        <meta charset="UTF-8" content="IE=8" http-equiv="X-UA-Compatible">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>realex</title>
+
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:css styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+
+
+        <!-- build:js scripts/vendor.js -->
+        <script type="text/javascript" src="./scripts/checkout.js"></script>
+        <script type="text/javascript" src="./scripts/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="./scripts/jquery.validate.js"></script>
+        <script type="text/javascript" src="./scripts/jquery.maskedinput-new.js"></script>
+        <script type="text/javascript" src="./scripts/jquery.form.json.js"></script>
+        <script type="text/javascript" src="./scripts/moment.min.js"></script>
+        <script type="text/javascript" src="./scripts/handlebars.js"></script>
+
+        <script type="text/javascript" src="./scripts/hpp.js"></script>
+        <script type="text/javascript" src="./scripts/messages.js"></script>
+        <script type="text/javascript" src="./scripts/bootstrap.min.js"></script>
+        <!-- bower:js -->
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+
+    </head>
+
+    <body>
+        <noscript>
+            &lt;style&gt; .rxp-placeholder { display: none; } &lt;/style&gt; &lt;h1 class="noscript"&gt;JavaScript is required on your browser to use this service. Please turn on JavaScript or upgrade your browser to have JavaScript capability.&lt;/h1&gt;
+        </noscript>
+        <div class="rxp-placeholder rxp-merchant-placeholder portfolio-realex">
+
+            <div class="success" id="success-pane" style="display: none">
+                <span id="result-message"></span>
+            </div>
+
+            <div class="rxp-container rxp-merchant-container">
+
+                <div class="rxp-body rxp-merchant-body" id="rxp-body">
+                    <div class="rxp-page-title rxp-merchant-page-title">
+                        <span class="rxp-page-title-text">Payment Details</span>
+                        <span class="rxp-security-info"> 
+                          <span id="rxp-secured-by">Secured By 256bit SSL Cert</span>
+                          <i class="icon-lock">&nbsp;</i>
+                        </span>
+                        <div style="clear: both"></div>
+                    </div>
+
+                    <div class="rxp-error-message-pane rxp-merchant-error-message-pane" id="error-message-pane" style="display: none">
+                        <h2 id="error-message"></h2>
+                    </div>
+                    <form class="rxp-form rxp-card-form rxp-merchant-card-form" id="card-payment-form" novalidate="novalidate">
+                        <input name="pas_cctype" type="hidden" value="VISA">
+                        <input id="pas_pareq" name="pas_pareq" type="hidden" value="">
+                        <input id="pas_acsurl" name="pas_acsurl" type="hidden" value="">
+                        <input id="pas_termurlId" name="pas_termurl" type="hidden" value="">
+                        <input id="encryptMDID" name="encryptMD" type="hidden" value="">
+                        <input id="verifyMessageId" name="verifyMessage" type="hidden" value="">
+                        <input id="verifyResultId" name="verifyResult" type="hidden" value="">
+                        <input id="verifyEnrolledId" name="verifyEnrolled" type="hidden" value="">
+
+
+
+                        <div class="rxp-control-group rxp-merchant-control-group">
+                            <label class="rxp-control-label rxp-merchant-control-label" for="pas_ccnum">Card Number</label>
+                            <div class="controls">
+                                <input autocomplete="off" class="rxp-wide rxpcol digitsOnly valid" id="pas_ccnum" maxlength="23" name="pas_ccnum" required="required" type="tel" placeholder="Card Number">
+
+                                <div class="help-block rxp-allowed-cards">
+
+                                    <img id="visa-logo" src="./images/visa.png" class="rxp-highlight">
+                                    <img id="mc-logo" src="./images/mc.png" class="rxp-fade">
+                                    <img id="amex-logo" src="./images/amex.png" class="rxp-fade">
+
+                                    <img class="rxp-card-loader rxp-hidden" id="card-loader" src="./images/ajax-loader.gif">
+                                </div>
+
+                                <span class="rxp-error" id="card-errors"></span>
+                            </div>
+                        </div>
+
+                        <div class="rxp-control-group rxp-merchant-control-group">
+                            <div class="rxpcol2">
+                                <div class="rxp-control-group rxp-merchant-control-group">
+                                    <label class="rxp-control-label rxp-merchant-control-label rxpcol2 rxp-nospan" for="pas_expiry"><span>Expiry</span><span class="rxp-formatinfo">(mm/yy)</span>
+                                    </label>
+                                    <div class="controls controls-expiry">
+                                        <div id="expiry-controls">
+                                            <input autocomplete="off" id="pas_expiry" maxlength="7" name="pas_expiry" type="hidden" value="/">
+                                            <input autocomplete="off" class="rxp-cc-expiry rxp-cc-expiry-month digitsOnly rxp-error" data-other-expiry="pas_ccyear" id="pas_ccmonth" maxlength="2" name="pas_ccmonth" required="required" type="tel" placeholder="MM"> /
+                                            <input autocomplete="off" class="rxp-cc-expiry rxp-cc-expiry-year digitsOnly rxp-error" data-other-expiry="pas_ccmonth" id="pas_ccyear" maxlength="2" name="pas_ccyear" required="required" type="tel" placeholder="YY">
+                                        </div>
+                                        <div id="expiry-error-container">
+                                            <label for="pas_ccmonth" class="rxp-error">Expiry month is required</label>
+                                            <label for="pas_ccyear" class="rxp-error">Expiry year is required</label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="rxpcol2">
+                                <div class="rxp-control-group rxp-merchant-control-group">
+                                    <label class="rxp-control-label rxp-merchant-control-label rxpcol2 rxp-nospan rxp-popover" for="pas_cccvc" data-content="The last 3 digits on the back of your card. For American Express, it is the last 4 digits on the front of your card." data-title="Security Code" data-original-title="" title=""><span>Security Code</span> <i class="icon-info-sign"></i>
+                                    </label>
+                                    <div class="controls">
+                                        <input autocomplete="off" class="rxpcol2 digitsOnly  rxp-error" id="pas_cccvc" maxlength="4" name="pas_cccvc" required="required" type="tel" placeholder="Security Code">
+
+                                        <label for="pas_cccvc" class="rxp-error">The Security Code is not valid</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="rxp-control-group rxp-merchant-control-group" id="issue-number-pane" style="display: none">
+                            <label class="rxp-control-label rxp-merchant-control-label rxpcol2 rxp-nospan" for="pas_issuenumber">Issue Number (if applicable)</label>
+                            <div class="controls">
+                                <div class="rxpcol2">
+                                    <input autocomplete="off" class="rxpcol2 digitsOnly" id="pas_issuenumber" maxlength="2" name="pas_issuenumber" type="tel" placeholder="Issue Number">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rxp-control-group rxp-merchant-control-group">
+                            <label class="rxp-control-label rxp-merchant-control-label" for="pas_ccname">Cardholder Name</label>
+                            <div class="controls">
+                                <input autocomplete="off" class="rxp-wide rxpcol rxp-error" id="pas_ccname" maxlength="100" name="pas_ccname" required="required" type="text" pattern="^[s  -; = ?-~ ¡-ÿ€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ]*$" placeholder="Cardholder Name">
+                                <label for="pas_ccname" class="rxp-error">The Card Name is not valid</label>
+                            </div>
+                        </div>
+                        <div class="rxp-dcc-holder" id="realex-dcc-holder" style="display: none;"></div>
+                        <!-- RealVault Div start -->
+
+                        <div style="clear: both">&nbsp;</div>
+                        <!-- RealVault Div End -->
+                        <div class="form-actions">
+                            <div class="rxp-btn-info rxp-merchant-btn-info rxp-center rxp-hidden">For added security you will be transferred to your bank's card verification page</div>
+                            <input class="rxp-btn rxp-btn rxp-btn-block rxp-btn-primary rxp-btn-large rxp-merchant-btn" id="rxp-primary-btn" type="submit" value="Pay Now">
+                        </div>
+
+                        <input name="guid" type="hidden" value="d4e83325-78d9-45cf-8631-6b44d657150e">
+                        <input name="dccchoice" type="hidden" value="">
+                        <input name="dccrate" type="hidden" value="">
+                        <input name="dcc105" type="hidden">
+
+                    </form>
+                </div>
+                <div class="rxp-footer">
+                    <div class="rxp-footer-left"></div>
+                </div>
+            </div>
+        </div>
+        <script id="realex-script" type="text/javascript" data-proccessing="/resources/ajax-loader.gif">
+            var hpp = {};
+            $(document)
+                .ready(
+                    function() {
+
+                        hpp = Hpp.create({
+                            form_name: "card-payment-form"
+                        });
+                        //hpp.register_dcc_check_listener("#ccnumber");
+                        hpp.allowableCards = ['AMEX', 'MC', 'VISA'];
+                        hpp.validCardNameString = '^[s  -; = ?-~ \u00A1-\u00FF\u20AC\u201A\u0192\u201E\u2026\u2020\u2021\u02C6\u2030\u0160\u2039\u0152\u017D\u2018\u2019\u201C\u201D\u2022\u2013\u2014\u02DC\u2122\u0161\u203A\u0153\u017E\u0178]*$';
+                        hpp.shouldOfferDCC = false;
+
+                        var cardPaymentButton = null;
+
+                        if (cardPaymentButton) {
+                            Hpp.i18n.messages.paynow = cardPaymentButton;
+                            $("#rxp-primary-btn").val(
+                                Hpp.i18n.messages.paynow);
+                        }
+                    });
+        </script>
+
+        <div id="rxp-dcc-offer-template" style="display: none" type="text/x-handlebars-template">
+            <div class="rxp-well">
+                <div class="rxp-dcc-offer-title">Pay In Your Own Currency</div>
+
+                <div class="rxp-dcc-offer" id="rxp-dcc-offer-section">
+                    <div id="rxp-dcc-offer-text">The total amount due is <b>{{dcc.merchantAmountCurrency}} {{dcc.merchantDisplayAmount}}</b>. We notice that you have a {{dcc.cardHolderAmountCurrency}} card. For your convenience we can charge this to you as <b>{{dcc.cardHolderAmountCurrency}} {{dcc.cardHolderDisplayAmount}}</b>
+                        <br>(Exchange rate used: 1 {{dcc.merchantAmountCurrency}} = {{dcc.cardHolderRate}} {{dcc.cardHolderAmountCurrency}})</div>
+                    <div class="rxp-btn-group rxp-center rxp-btn-group-vertical-mobile" data-toggle="buttons-radio">
+                        <button class="rxp-btn" data-toggle="button" id="rxp-dcc-offer-yes" type="button">YES, Please charge me {{dcc.cardHolderDisplayAmount}} {{dcc.cardHolderAmountCurrency}}</button>
+                        <button class="rxp-btn" data-toggle="button" id="rxp-dcc-offer-no" type="button">NO, Please charge me {{dcc.merchantDisplayAmount}} {{dcc.merchantAmountCurrency}}</button>
+                    </div>
+                </div>
+                <div class="rxp-dcc-offer-legal">
+                    <p>
+                    </p>
+                    <div id="rxp-dcc-offer-legal-visa-yes" style="display: none">
+                        <div id="rxp-dcc-offer-legal-visa-yes-text">{{#ifCond cardIdentity.cardtype 'VISA'}}I accept that I have been offered a choice of currencies for payment. I accept the conversion rate and final amount and that the final selected transaction currency is the cardholder's chosen currency, {{dcc.cardHolderAmountCurrency}} {{/ifCond}}</div>
+                    </div>
+                    <div id="rxp-dcc-offer-legal-mastercard-yes" style="display: none">
+                        <div id="rxp-dcc-offer-legal-mastercard-yes-text">{{#ifCond cardIdentity.cardtype 'MC'}}I accept the conversion rate and final amount and that the final selected transaction currency is the cardholder's chosen currency, {{dcc.cardHolderAmountCurrency}}.{{/ifCond}}</div>
+                    </div>
+                    <div id="rxp-dcc-offer-legal-mastercard-no" style="display: none">
+                        <div id="rxp-dcc-offer-legal-mastercard-no-text">{{#ifCond cardIdentity.cardtype 'MC'}}I understand that Mastercard has a currency conversion process and that I have chosen not to use the Mastercard currency conversion process and I will have no recourse against Mastercard with respect to any matter related to the currency conversion or disclosure thereof.{{/ifCond}}</div>
+                    </div>
+                    <p>
+                    </p>
+                    <div id="rxp-dcc-offer-legal">{{#if dcc.exchangeRateSourceName}}Reference Rate Provided by: {{dcc.exchangeRateSourceName}} Rate, {{/if}}{{#if dcc.exchangeRateSourceTimestamp}}Exchange rate offered on: {{dateFormat dcc.exchangeRateSourceTimestamp format="YYYY/MM/DD HH:mm"}} {{/if}}Exchange Rate Mark-Up: {{dcc.marginRatePercentage}}%, Commission for Currency Conversion: {{dcc.commissionPercentage}}%</div>
+                </div>
+            </div>
+        </div>
+
+        <form id="acsUrlForm" method="POST" name="acsUrlForm">
+            <input id="PaReq" name="PaReq" type="hidden">
+            <input id="MD" name="MD" type="hidden">
+            <input id="TermUrl" name="TermUrl" type="hidden">
+        </form>
+
+
+    </body>
+
+  </html>

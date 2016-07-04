@@ -1,0 +1,171 @@
+
+@media (max-width: 400px) {
+    .rxp-security-info {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    
+    
+    
+    .rxp-btn-group-vertical-mobile {
+      display: inline-block;
+      *display: inline;
+      /* IE7 inline-block hack */
+    
+      *zoom: 1;
+      margin: 0 auto;
+    }
+    
+    .rxp-btn-group-vertical-mobile > .rxp-btn {
+      display: block;
+      float: none;
+      max-width: 100%;
+      -webkit-border-radius: 0;
+         -moz-border-radius: 0;
+              border-radius: 0;
+      width:100%;
+    }
+    
+    .rxp-btn-group-vertical-mobile > .rxp-btn + .rxp-btn {
+      margin-top: -1px;
+      margin-left: 0;
+    }
+    
+    .rxp-btn-group-vertical-mobile > .rxp-btn:first-child {
+      -webkit-border-radius: 4px 4px 0 0;
+         -moz-border-radius: 4px 4px 0 0;
+              border-radius: 4px 4px 0 0;
+              margin: 0;
+    }
+    
+    .rxp-btn-group-vertical-mobile > .rxp-btn:last-child {
+      -webkit-border-radius: 0 0 4px 4px;
+         -moz-border-radius: 0 0 4px 4px;
+              border-radius: 0 0 4px 4px;
+    }
+    
+    .rxp-btn-group-vertical-mobile > .rxp-btn-large:first-child {
+      -webkit-border-radius: 6px 6px 0 0;
+         -moz-border-radius: 6px 6px 0 0;
+              border-radius: 6px 6px 0 0;
+    }
+    
+    .rxp-btn-group-vertical-mobile > .rxp-btn-large:last-child {
+      -webkit-border-radius: 0 0 6px 6px;
+         -moz-border-radius: 0 0 6px 6px;
+              border-radius: 0 0 6px 6px;
+    }   
+    
+}
+
+@media (max-width: 480px) {
+    
+    .rxp-error {
+        clear: none;
+        
+    }
+    
+    .rxp-wide {
+    width:100%;
+    }
+  #rxp-body [class*="rxpcol"],
+  #rxp-body .uneditable-input[class*="rxpcol"],
+  #rxp-body .row-fluid [class*="rxpcol"] {
+    display: block;
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  #rxp-body .input-large,
+  #rxp-body .input-xlarge,
+  #rxp-body .input-xxlarge,
+  #rxp-body input[class*="rxpcol"],
+  #rxp-body select[class*="rxpcol"],
+  #rxp-body textarea[class*="rxpcol"],
+  #rxp-body .uneditable-input {
+    display: block;
+    width: 100%;
+    min-height: 30px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+
+    .rxp-container {
+        min-width:100px;
+    }
+    
+        
+    .rxp-logo img {
+        height:30px;
+    }
+    .rxp-realex-logo {
+        height:50px;
+    }
+    /*
+    #rxp-body .span2 {
+        width: 100px;
+        overflow:visible;
+        text-wrap:none;
+    }
+    */
+    .rxp-security-info {
+        display: none;
+    }
+    
+    .rxp-btn-info {
+        text-align: center;
+    }
+    button.rxp-btn.rxp-pay-now-btn, input[type="submit"].rxp-btn.rxp-pay-now-btn {
+        width:100%;
+    }
+    
+    .rxp-footer {
+        background-image: url("../images/footer/hpp_stacked_spb_logo.png");
+    }
+    
+    #expiry-error-container {
+        clear: both;
+        text-align:left;
+    }
+    .controls-expiry {
+        text-align:center;
+        vertical-align: bottom;
+        padding-top:5px
+    }
+    
+    #pas_ccmonth {
+        float:left !important;
+        width:35% !important;
+        margin-top:-5px !important;
+    }
+    
+    #pas_ccyear {
+        float:right !important;
+        width:35% !important;
+        margin-top:-5px !important;
+    }
+    
+    /*
+    #rxp-body input.span4, #rxp-body textarea.span4, #rxp-body .uneditable-input.span4 {
+            width: 200px;
+    }
+    */
+    /*
+    #pas_cccvc {
+        width:80px;
+    }
+
+    .rxp-cc-expiry {
+        width: 25px;
+    }
+    */  
+
+    
+}
